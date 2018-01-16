@@ -1,0 +1,50 @@
+---
+title: "Einflussfaktoren in einem Vatermodell"
+subtitle: "Ausführungen aufgrund eines praktischen Beispiels"
+author: "Peter von Rohr"
+date: "`r Sys.Date()`"
+output:
+  tufte::tufte_html: default
+  tufte::tufte_handout:
+    citation_package: natbib
+    latex_engine: xelatex
+  tufte::tufte_book:
+    citation_package: natbib
+    latex_engine: xelatex
+bibliography: skeleton.bib
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+library(tufte)
+# invalidate cache when the tufte version changes
+knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tufte'))
+options(htmltools.dir.version = FALSE)
+```
+
+# Einleitung
+In der traditionellen Zuchtwertschätzung gilt das Vatermodell gilt als Vorläufer des BLUP-Tiermodells. Bezüglich der Modellierung gibt es viele Analogien. Die Beschreibung der Modelle und die folgenden Beispiele sind dem Buch von [@Mrode2005] entnommen.
+
+
+# Das Modell
+Das Vatermodell ist ein gemischtes lineares Modell, wobei die Vatereffekte als zufällige Effekte modelliert werden. In Matrix-Vektor-Schreibweisen können wir das Modell wie folgt notieren.
+
+
+
+
+```{r bib, include=FALSE}
+sbiblio <- "skeleton.bib"
+bref <- c(bibentry(
+  bibtype = "book",
+  author = person(c("R.","A."), "Mrode"),
+  title = "Linear Models for the Prediction of Animal Breeding Values",
+  chapter = "3",
+  pages = "52ff",
+  year = 2005,
+  publisher = "CABI Publishing",
+  key = "Mrode2005"
+))
+cat(paste0(toBibtex(bref), collapse = "\n"), file = sbiblio)
+# create a bib file for the R packages used in this document
+#knitr::write_bib(c('base', 'rmarkdown'), file = 'skeleton.bib')
+```
